@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31903.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedRift_Test_Backend.Core", "RedRift_Test_Backend.Core\RedRift_Test_Backend.Core.csproj", "{8C8860DA-1073-4E96-96B8-2205A9C378FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedRift_Test_Backend.Data", "RedRift_Test_Backend.Data\RedRift_Test_Backend.Data.csproj", "{0A9EBAF1-18A5-45D7-9A9A-B3CDA82DF441}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedRift_Test_Backend.Logic", "RedRift_Test_Backend.Logic\RedRift_Test_Backend.Logic.csproj", "{9D7C11A2-8637-42A1-9BDD-76848BBD09AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C8860DA-1073-4E96-96B8-2205A9C378FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C8860DA-1073-4E96-96B8-2205A9C378FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C8860DA-1073-4E96-96B8-2205A9C378FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C8860DA-1073-4E96-96B8-2205A9C378FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9EBAF1-18A5-45D7-9A9A-B3CDA82DF441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9EBAF1-18A5-45D7-9A9A-B3CDA82DF441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9EBAF1-18A5-45D7-9A9A-B3CDA82DF441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9EBAF1-18A5-45D7-9A9A-B3CDA82DF441}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D7C11A2-8637-42A1-9BDD-76848BBD09AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D7C11A2-8637-42A1-9BDD-76848BBD09AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D7C11A2-8637-42A1-9BDD-76848BBD09AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D7C11A2-8637-42A1-9BDD-76848BBD09AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {699B760D-3699-46A4-9F10-6135330DB875}
+	EndGlobalSection
+EndGlobal
