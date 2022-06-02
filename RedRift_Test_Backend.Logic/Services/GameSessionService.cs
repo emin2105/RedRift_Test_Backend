@@ -39,10 +39,10 @@ namespace RedRift_Test_Backend.Logic.Services
                                 foreach (var player in gameRoom.PlayerSessions)
                                 {
                                     player.Health -= random.Next(1, 3);
+                                    await hubContext.Clients.Group(gameRoom.Id.ToString())
+                                        .SendAsync("Receive", $"{gameRoom.PlayerSessions[0].User.Name} Health({gameRoom.PlayerSessions[0].Health}) | {gameRoom.PlayerSessions[1].User.Name} Health({gameRoom.PlayerSessions[1].Health})");
                                     if (player.Health <= 0)
-                                    {
-                                        Console.WriteLine($"{player.Id} {player.Health}");
-                                        await hubContext.Clients.Group(gameRoom.Id.ToString()).SendAsync($"{player.User.Name} {player.Health}");
+                                    {                                                                
                                         gameOver = true;
                                         break;
                                     }
@@ -53,6 +53,9 @@ namespace RedRift_Test_Backend.Logic.Services
                                 {
                                     gameRoom.IsOpen = false;
                                     gameRoom.PlayerSessions.First(p => p.Health > 0).Winner = true;
+                                    await hubContext.Clients.Group(gameRoom.Id.ToString())
+                                        .SendAsync("Receive", $"Player {gameRoom.PlayerSessions.First(p => p.Health > 0).User.Name} won!");
+
                                     dbContext.GameRooms.Update(gameRoom);
                                     await dbContext.SaveChangesAsync();
                                 }
