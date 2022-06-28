@@ -12,9 +12,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+var connection = @"Server=db;Database=redrift-test;User Id=sa;Password=zfC5h0uZ;MultipleActiveResultSets=true;Integrated Security=false;TrustServerCertificate=true";
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.UseSqlServer(connection);
 });
 
 builder.Services.AddMediatR(typeof(GameSessionService).Assembly);
@@ -47,4 +49,14 @@ app.UseHttpsRedirection();
 
 app.MapControllers();
 app.UseCors("CorsPolicy");
+
+InitializeDatabase(app);
 app.Run();
+
+void InitializeDatabase(IApplicationBuilder app)
+{
+    using (var scope = app?.ApplicationServices?.GetService<IServiceScopeFactory>()?.CreateScope())
+    {
+        scope?.ServiceProvider?.GetRequiredService<ApplicationDbContext>()?.Database?.Migrate();
+    }
+}

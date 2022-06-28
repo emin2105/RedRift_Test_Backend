@@ -8,8 +8,6 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["RedRift_Test_Backend.Core/RedRift_Test_Backend.Core.csproj", "RedRift_Test_Backend.Core/"]
-COPY ["RedRift_Test_Backend.Data/RedRift_Test_Backend.Data.csproj", "RedRift_Test_Backend.Data/"]
-COPY ["RedRift_Test_Backend.Logic/RedRift_Test_Backend.Logic.csproj", "RedRift_Test_Backend.Logic/"]
 RUN dotnet restore "RedRift_Test_Backend.Core/RedRift_Test_Backend.Core.csproj"
 COPY . .
 WORKDIR "/src/RedRift_Test_Backend.Core"
